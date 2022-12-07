@@ -1,0 +1,81 @@
+.customSelect,
+.customSelectLabel,
+.customSelectElement,
+.customSelectValue,
+.customSelectOptions
+.customSelectOption {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.customSelect {
+  min-width: 250px;
+  max-width: 350px;
+}
+
+.customSelectLabel {
+  font-weight: bold;
+}
+
+.customSelectElement {
+  position: relative;
+  width: 100%;
+}
+
+.customSelectElement:focus > .customSelectValue {
+  outline: none;
+}
+
+.customSelectValue {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 1px black;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.customSelectValue::after {
+  content: '';
+  display: inline-block;
+  border: solid 4px transparent;
+  border-top-color: black;
+  margin-left: 12px;
+  margin-top: 4px;
+}
+
+.customSelectOptions,
+.customSelectOptionsShow {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  border: solid 1px black;
+  width: calc(100% - 2px);
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.customSelectOptions {
+  display: none;
+}
+
+.customSelectOptionsShow {
+  display: block;
+}
+
+.customSelectOption,
+.customSelectOptionSelected {
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.customSelectOptionSelected {
+  background-color: #82BFFB;
+}
+
+.customSelectOption:hover,
+.customSelectOptionSelected:hover {
+  background-color: #3699FA;
+}
