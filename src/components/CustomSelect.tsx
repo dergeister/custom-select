@@ -10,6 +10,7 @@ export function CustomSelect(props: ICustomSelectProps) {
   const [searchTerm, setSearchTerm] = useState('');
 
   const optionsClassName = showOptions ? styles.customSelectOptionsShow : styles.customSelectOptions;
+  const valueClassName = showOptions ? styles.customSelectValueSelected : styles.customSelectValue;
   
   const timeoutDuration = 500;
 
@@ -99,7 +100,7 @@ export function CustomSelect(props: ICustomSelectProps) {
         onBlur={handleElementBlur}
         onKeyDown={handleElementKeyDown}
       >
-        <span className={styles.customSelectValue}>
+        <span className={valueClassName}>
           {selectedOption.text}
         </span>
         <ul id={props.id} className={optionsClassName}>
