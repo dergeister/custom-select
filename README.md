@@ -1,7 +1,7 @@
 # custom-select
 
 ## README English Version
-For the english version of README.md you can access **README-en.md**.
+For the english version of README.md you can access [README-en.md](https://github.com/dergeister/custom-select/blob/main/README-en.md).
 
 ## Descrição
 Projeto inspirado pelo video [The Perfect Project For Your Portfolio](https://www.youtube.com/watch?v=Fc-oyl31mRI) do canal [Web Dev Simplified](https://www.youtube.com/@WebDevSimplified) onde o objetivo é construir um select customizado.
