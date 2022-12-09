@@ -19,6 +19,7 @@
 
 .customSelectElement {
   position: relative;
+  z-index: 1;
   width: 100%;
 }
 
@@ -34,8 +35,9 @@
   padding: 0.5rem 1rem;
   cursor: pointer;
   user-select: none;
-  border: solid 1px gray;
-  box-shadow: 0 0 10px rgb(0 0 0 / 0.2);
+  border: solid 1px var(--gray-400);
+  box-shadow: 0 0 10px var(--shadow-100);
+  background-color: var(--white);
 }
 
 .customSelectValue {
@@ -44,7 +46,7 @@
 
 .customSelectValueSelected {
   border-radius: 8px 8px 0 0;
-  border: solid 2px gray;
+  border: solid 2px var(--gray-400);
   border-bottom: none;
 }
 
@@ -57,12 +59,12 @@
 }
 
 .customSelectValue::after {
-  border-top-color: black;
+  border-top-color: var(--arrow);
   margin-top: 4px;
 }
 
 .customSelectValueSelected::after {
-  border-bottom-color: black;
+  border-bottom-color: var(--arrow);
   margin-top: -4px;
 }
 
@@ -75,9 +77,10 @@
   border-top: none;
   max-height: 200px;
   overflow-y: auto;
-  border: solid 1px gray;
+  border: solid 1px var(--gray-400);
   border-radius: 0 0 8px 8px;
-  box-shadow: inset 0 -10px 10px -10px rgb(0 0 0 / 0.3);
+  box-shadow: inset 0 -10px 10px -10px var(--shadow-500), inset 0 10px 10px -10px var(--shadow-500);
+  background-color: var(--white);
 }
 
 .customSelectOptions {
@@ -86,7 +89,7 @@
 
 .customSelectOptionsShow {
   display: block;
-  border: solid 2px gray;
+  border: solid 2px var(--gray-400);
   border-top: none;
 }
 
@@ -96,18 +99,18 @@
 }
 
 .customSelectOptionsShow::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
+  background-color: var(--gray-100);
   border-radius: 8px;
 
 }
 
 .customSelectOptionsShow::-webkit-scrollbar-thumb {
-  background-color: #888; 
+  background-color: var(--gray-300); 
   border-radius: 8px;
 }
 
 .customSelectOptionsShow::-webkit-scrollbar-thumb:hover {
-  background-color: #555; 
+  background-color: var(--gray-600); 
 }
 
 .customSelectOption,
@@ -117,10 +120,10 @@
 }
 
 .customSelectOptionSelected {
-  background-color: #82BFFB;
+  background-color: var(--blue-100);
 }
 
 .customSelectOption:hover,
 .customSelectOptionSelected:hover {
-  background-color: #3699FA;
+  background-color: var(--blue-500);
 }

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ICustomSelectOption } from '../types/ICustomSelectOption.interface';
-import { ICustomSelectProps } from '../types/ICustomSelectProps.interface';
+import { ICustomSelectOption } from '../../types/ICustomSelectOption.interface';
+import { ICustomSelectProps } from '../../types/ICustomSelectProps.interface';
 import styles from './CustomSelect.module.css';
 
 export function CustomSelect(props: ICustomSelectProps) {

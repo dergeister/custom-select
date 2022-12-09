@@ -1,3 +1,21 @@
+:root {
+  --white: #ffffff;
+
+  --blue-100: #82BFFB;
+  --blue-500: #3699FA;
+  --blue-800: #2C79C7;
+
+  --gray-100: #f1f1f1;
+  --gray-300: #888888;
+  --gray-400: #808080;
+  --gray-600: #555555;
+
+  --shadow-100: #00000033;
+  --shadow-500: #0000004d;
+
+  --arrow: #000000;
+}
+
 body {
   margin: 0;
 }
@@ -5,5 +23,41 @@ body {
 .App {
   display: flex;
   justify-content: center;
+}
+
+.form {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  width: 500px;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formHeader {
+  display: flex;
+  justify-content: center;
+}
+
+.formRow {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.formButton {
+  outline: none;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--white);
+  background-color: var(--blue-500);
+  font-size: 1rem;
+}
+
+.formButton:hover {
+  background-color: var(--blue-800);
 }

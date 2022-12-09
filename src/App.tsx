@@ -1,9 +1,20 @@
 import './App.css'
-import { CustomSelect } from './components/CustomSelect'
+import { CustomSelect } from './components/CustomSelect/CustomSelect'
+import { LoadingOverlay } from './components/LoadingOverlay/LoadingOverlay';
+
+import axios from 'axios';
+import { useState } from 'react';
+import { IState } from './types/IState';
 
 function App() {
 
-  const options = [
+  const [isLoading, setIsLoading] = useState(false);
+  const [options, setOptions] = useState([{
+    value: '',
+    text: 'Escolha um estado'
+  }]);
+
+  const fallbackOptions = [
     {
       value: 'AC',
       text: 'Acre'
@@ -114,9 +125,60 @@ function App() {
     },
   ]
 
+  async function handleFormButtonClick() {
+    try {
+      setIsLoading(true);
+
+      const { data } = await axios.get<IState[]>('https://servicodados.ibge.gov.br/api/v1/localidades/estados');
+      
+      const stateOptions = data.map(state => {
+        return {
+          value: state.sigla,
+          text: state.nome
+        }
+      })
+
+      stateOptions.sort(function(a, b) {
+        var textA = a.text.toLowerCase();
+        var textB = b.text.toLowerCase();
+
+        return (textA < textB) ? -1 : (textA > textB) ? 0 : 1;
+      });
+
+      setOptions(stateOptions)
+    } catch (error) {
+      setOptions(fallbackOptions);
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
-    <div className="App">
-      <CustomSelect label='Estado' id='states-select' options={options} />
+    <div className='App'>
+      <div className='form'>
+        <header className='formHeader'>
+          <h1>
+            Qual seu estado?
+          </h1>
+        </header>
+        <div className="formRow">
+          <LoadingOverlay
+            isLoading={isLoading}
+            children={
+              <CustomSelect
+                id='states-select'
+                label='Estado'
+                options={options}
+              />
+            }
+          />      
+        </div>
+        <div className="formRow">
+          <button className='formButton' onClick={handleFormButtonClick}>
+            Carregar Estados
+          </button>
+        </div>
+      </div>
     </div>
   )
 }
