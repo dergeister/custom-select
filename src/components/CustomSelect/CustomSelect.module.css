@@ -6,6 +6,7 @@
 .customSelectOption {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
 }
 
 .customSelect {
@@ -23,49 +24,38 @@
   width: 100%;
 }
 
-.customSelectElement:focus > .customSelectValue {
-  outline: none;
-}
-
-.customSelectValue,
-.customSelectValueSelected {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+.customSelectValue {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 2rem 0.5rem 1rem;
   cursor: pointer;
   user-select: none;
   border: solid 1px var(--gray-400);
   box-shadow: 0 0 10px var(--shadow-100);
   background-color: var(--white);
-}
-
-.customSelectValue {
+  outline: none;
   border-radius: 8px;
 }
 
-.customSelectValueSelected {
+.customSelectValue:focus {
   border-radius: 8px 8px 0 0;
   border: solid 2px var(--gray-400);
   border-bottom: none;
 }
 
-.customSelectValue::after,
-.customSelectValueSelected::after {
-  content: '';
-  display: inline-block;
+.customSelectValue:focus + .customSelectArrow {
+  border-top: none;
+  border-bottom-color: var(--arrow);
+}
+
+.customSelectArrow {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
   border: solid 4px transparent;
   margin-left: 12px;
-}
-
-.customSelectValue::after {
   border-top-color: var(--arrow);
   margin-top: 4px;
-}
-
-.customSelectValueSelected::after {
-  border-bottom-color: var(--arrow);
-  margin-top: -4px;
 }
 
 .customSelectOptions,

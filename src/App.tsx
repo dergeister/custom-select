@@ -14,6 +14,8 @@ function App() {
     text: 'Escolha um estado'
   }]);
 
+  const forcedLoadingDelay = 500;
+
   const fallbackOptions = [
     {
       value: 'AC',
@@ -149,7 +151,9 @@ function App() {
     } catch (error) {
       setOptions(fallbackOptions);
     } finally {
-      setIsLoading(false);
+      setTimeout(() => {
+        setIsLoading(false);
+      }, forcedLoadingDelay)
     }
   }
 
