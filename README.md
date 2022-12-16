@@ -8,8 +8,9 @@ Projeto inspirado pelo video [The Perfect Project For Your Portfolio](https://ww
 
 O vídeo mostra como criar um select customizado em javascript com interações do teclado para escolher opções com setas e selecionar uma opção com base no que foi digitado. Além disso, eu decidi fazer o seguinte:
 - Criar um componente React em Typescript ao invés de utilizar javascript puro.
-- Pesquisar estados da API do IBGE.
+- Pesquisar estados do Brasil da API do IBGE.
 - Fazer melhorias visuais no componente.
+- Filtrar opções com base no que for digitado.
 
 ### React e Typescript
 Queria praticar mais React e Typescript e parecia uma oportunidade boa fazer o **custom-select** utilizando-os.
@@ -22,4 +23,4 @@ Selects padrões são muito limitados em sua personalização e existiam alguns 
 
 ## Melhorias
 Possíveis melhorias para o projeto:
-- Modificar o comportamento de _selecionar_ com base no que foi digitado para _filtrar_ com base no que foi digitado.
+- Impedir interação durante a requisição à API do IBGE

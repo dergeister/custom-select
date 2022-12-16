@@ -10,6 +10,7 @@ The video shows how to create a custom select in javascript with keyboard intera
 - Create a React component in Typescript insted of utilizing raw javascript.
 - Get Brazilian states from the IBGE API (IBGE is the main provider of geographic and statistical information on Brazil).
 - Make some visual improvements on the component.
+- Filter options based on what was typed.
 
 ### React and Typescript
 I wanted to practice React and Typescript and it looked like a good opportunity to do the **custom-select** with it.
@@ -22,5 +23,4 @@ Default selects are very limited when it comes of customization and there were s
 
 ## Improvements
 Possible improvements to the project:
-- Search the states list from the IBGE API ().
-- Modify the behaviour for when the user types to insted of _selecting_ to _filtering_.
+- Block interaction while doing the request to the IBGE API. 
